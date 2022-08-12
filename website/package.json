@@ -4,9 +4,10 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build && next export",
+    "build": "npm run env && next build && next export",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "env": "cp env.${GCLOUD_PROJECT:-local}.js env.js"
   },
   "dependencies": {
     "next": "12.2.0",
