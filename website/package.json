@@ -8,10 +8,10 @@
   ],
   "scripts": {
     "dev": "next dev",
-    "build": "npm run env && next build && next export",
+    "build": "next build && next export && npm run env",
     "start": "next start",
     "lint": "next lint",
-    "env": "cp env.${GCLOUD_PROJECT:-local}.js public/env.js"
+    "env": "cp env.${GCLOUD_PROJECT:-local}.js out/env.js"
   },
   "dependencies": {
     "next": "12.2.0",
