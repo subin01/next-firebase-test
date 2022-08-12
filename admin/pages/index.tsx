@@ -1,7 +1,7 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
 import Image from 'next/image'
-import styles from '../styles/Home.module.css'
+import styles from '@styles/Home.module.css'
 import HelloWorld from '@components/HelloWorld'
 
 const Home: NextPage = () => {
@@ -15,10 +15,9 @@ const Home: NextPage = () => {
 
       <main className={styles.main}>
         <h1 className={styles.title}>
-         APP v2
+       Admin!!
         </h1>
-
-        <HelloWorld /> <h2>Subfolder!!!</h2>
+        <HelloWorld />
 
         <p className={styles.description}>
           Get started by editing{' '}
