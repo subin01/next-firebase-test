@@ -18,7 +18,7 @@ const Home: NextPage = () => {
           Welcome to <a href="https://nextjs.org">Next.js! + Firebase Deploy</a>
         </h1>
 
-        <HelloWorld />
+        <HelloWorld /> <h2>Subfolder!!!</h2>
 
         <p className={styles.description}>
           Get started by editing{' '}
