@@ -2,12 +2,16 @@
   "name": "my-app",
   "version": "0.1.0",
   "private": true,
+  "predeploy": [
+    "npm ci",
+    "npm run build"
+  ],
   "scripts": {
     "dev": "next dev",
     "build": "npm run env && next build && next export",
     "start": "next start",
     "lint": "next lint",
-    "env": "cp env.${GCLOUD_PROJECT:-local}.js env.js"
+    "env": "cp env.${GCLOUD_PROJECT:-local}.js public/env.js"
   },
   "dependencies": {
     "next": "12.2.0",
