@@ -15,7 +15,7 @@ const Home: NextPage = () => {
 
       <main className={styles.main}>
         <h1 className={styles.title}>
-          Welcome to <a href="https://nextjs.org">Next.js! + Firebase Deploy</a>
+         APP v2
         </h1>
 
         <HelloWorld /> <h2>Subfolder!!!</h2>
