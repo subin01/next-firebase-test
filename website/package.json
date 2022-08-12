@@ -4,10 +4,11 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "npm run env && next build && next export",
+    "build": "next build && next export",
     "start": "next start",
     "lint": "next lint",
-    "env": "cp env.${GCLOUD_PROJECT:-local}.js env.js"
+    "deploy:dev": "npm run build && firebase deploy --only hosting --project dev",
+    "deploy:prod": "npm run build && firebase deploy --only hosting --project prod"
   },
   "dependencies": {
     "next": "12.2.0",
