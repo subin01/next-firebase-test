@@ -1,5 +1,8 @@
 {
   "projects": {
-    "default": "sp-next-firebase"
-  }
+    "prod": "sp-next-firebase",
+    "dev": "sp-next-firebase-dev"
+  },
+  "targets": {},
+  "etags": {}
 }
