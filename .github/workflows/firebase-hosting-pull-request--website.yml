@@ -11,10 +11,14 @@ defaults:
 jobs:
   build_and_preview:
     if: '${{ github.event.pull_request.head.repo.full_name == github.repository }}'
-    runs-on: ubuntu-latest
-    env:
-      NODE_ENV: development
+    runs-on: macos-latest
+
     steps:
+      - name: set environment variables
+        uses: allenevans/set-env@v2.0.0
+        with:
+          NODE_ENV: 'development'
+          
       - uses: actions/checkout@v2
       - run: npm ci && npm run github_build:dev
       - uses: FirebaseExtended/action-hosting-deploy@v0
