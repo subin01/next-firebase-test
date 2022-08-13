@@ -5,7 +5,7 @@ name: Deploy App:Website Hosting on merge:Main
 'on':
   push:
     branches:
-      - main
+      - develop
 env:
   NEXT_PUBLIC_APIKEY: "AIzaSyBOrUoS0_AV-XlkUJsQhUnBJzd8VWjK6cM"
   NEXT_PUBLIC_AUTHDOMAIN: "sp-next-firebase.firebaseapp.com"
@@ -21,7 +21,7 @@ defaults:
 
 jobs:
   build_and_deploy:
-    runs-on: ubuntu-latest
+    runs-on: macos-latest
     steps:
       - uses: actions/checkout@v2
       - run: npm ci && npm run github_build:prod
