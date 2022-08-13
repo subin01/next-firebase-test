@@ -4,9 +4,11 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build && next export",
     "start": "next start",
     "lint": "next lint",
+    "build": "next build && next export",
+    "build:dev": "env-cmd -f .env.development next build && next export",
+    "build:prod": "env-cmd -f .env.production next build && next export",
     "deploy:dev": "env-cmd -f .env.development npm run build && firebase deploy --only hosting --project dev",
     "deploy:prod": "env-cmd -f .env.production npm run build && firebase deploy --only hosting --project prod"
   },
