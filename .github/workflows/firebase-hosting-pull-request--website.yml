@@ -4,9 +4,6 @@
 name: Deploy App:Website Hosting on PR
 'on': pull_request
 
-env:
-  NODE_ENV: development
-
 defaults:
   run:
     working-directory: website
@@ -15,6 +12,8 @@ jobs:
   build_and_preview:
     if: '${{ github.event.pull_request.head.repo.full_name == github.repository }}'
     runs-on: ubuntu-latest
+    env:
+      NODE_ENV: development
     steps:
       - uses: actions/checkout@v2
       - run: npm ci && npm run github_build:dev
