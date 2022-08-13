@@ -7,7 +7,7 @@
     "start": "next start",
     "lint": "next lint",
     "build": "next build && next export",
-    "github_build:dev": "env-cmd -f ./.env.development next build && next export",
+    "github_build:dev": "env-cmd -f ./website/.env.development next build && next export",
     "github_build:prod": "env-cmd -f .env.production next build && next export",
     "build:dev": "env-cmd -f .env.development next build && next export",
     "build:prod": "env-cmd -f .env.production next build && next export",
