@@ -6,6 +6,14 @@ name: Deploy App:Website Hosting on merge
   push:
     branches:
       - main
+env:
+  NEXT_PUBLIC_APIKEY: AIzaSyBOrUoS0_AV-XlkUJsQhUnBJzd8VWjK6cM
+  NEXT_PUBLIC_AUTHDOMAIN: sp-next-firebase.firebaseapp.com
+  NEXT_PUBLIC_PROJECTID: sp-next-firebase
+  NEXT_PUBLIC_STORAGEBUCKET: sp-next-firebase.appspot.com
+  NEXT_PUBLIC_MESSAGINGSENDERID: 802410335008
+  NEXT_PUBLIC_APPID: 1:802410335008:web:eddf1a0a030d981bbc6545
+  NEXT_PUBLIC_ENV_TYPE: Production
 
 defaults:
   run:
@@ -16,7 +24,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - run: npm ci && npm run build
+      - run: npm ci && npm run github_build:prod
       - uses: FirebaseExtended/action-hosting-deploy@v0
         with:
           repoToken: '${{ secrets.GITHUB_TOKEN }}'

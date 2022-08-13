@@ -5,18 +5,18 @@ name: Deploy App:Website Hosting on PR
 'on': pull_request
 
 env:
-  NEXT_PUBLIC_APIKEY: AIzaSyBOrUoS0_AV-XlkUJsQhUnBJzd8VWjK6cM
-  NEXT_PUBLIC_AUTHDOMAIN: sp-next-firebase.firebaseapp.com
-  NEXT_PUBLIC_PROJECTID: sp-next-firebase
-  NEXT_PUBLIC_STORAGEBUCKET: sp-next-firebase.appspot.com
-  NEXT_PUBLIC_MESSAGINGSENDERID: 802410335008
-  NEXT_PUBLIC_APPID: 1:802410335008:web:eddf1a0a030d981bbc6545
-  NEXT_PUBLIC_ENV_TYPE: Production
+  NEXT_PUBLIC_APIKEY: AIzaSyCYRSBlEUg-32Vahh6uS3XyGjIquVLktmk
+  NEXT_PUBLIC_AUTHDOMAIN: sp-next-firebase-dev.firebaseapp.com
+  NEXT_PUBLIC_PROJECTID: sp-next-firebase-dev
+  NEXT_PUBLIC_STORAGEBUCKET: sp-next-firebase-dev.appspot.com
+  NEXT_PUBLIC_MESSAGINGSENDERID: 947368364049
+  NEXT_PUBLIC_APPID: 1:947368364049:web:6b8e8f0352f9ce817d49b0
+  NEXT_PUBLIC_ENV_TYPE: Development
 
 defaults:
   run:
     working-directory: website
-    
+
 jobs:
   build_and_preview:
     if: '${{ github.event.pull_request.head.repo.full_name == github.repository }}'
