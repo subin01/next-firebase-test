@@ -7,8 +7,6 @@
     "start": "next start",
     "lint": "next lint",
     "build": "next build && next export",
-    "github_build:dev": "next build && next export",
-    "github_build:prod": "next build && next export",
     "deploy:dev": "env-cmd -f .env.development npm run build && firebase deploy --only hosting --project dev",
     "deploy:prod": "env-cmd -f .env.production npm run build && firebase deploy --only hosting --project prod"
   },
