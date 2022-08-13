@@ -4,6 +4,9 @@
 name: Deploy App:Website Hosting on PR
 'on': pull_request
 
+env:
+  NODE_ENV: development
+
 defaults:
   run:
     working-directory: website
