@@ -4,15 +4,6 @@
 name: Deploy App:Website Hosting on PR
 'on': pull_request
 
-env:
-  NEXT_PUBLIC_APIKEY: AIzaSyCYRSBlEUg-32Vahh6uS3XyGjIquVLktmk
-  NEXT_PUBLIC_AUTHDOMAIN: sp-next-firebase-dev.firebaseapp.com
-  NEXT_PUBLIC_PROJECTID: sp-next-firebase-dev
-  NEXT_PUBLIC_STORAGEBUCKET: sp-next-firebase-dev.appspot.com
-  NEXT_PUBLIC_MESSAGINGSENDERID: 947368364049
-  NEXT_PUBLIC_APPID: 1:947368364049:web:6b8e8f0352f9ce817d49b0
-  NEXT_PUBLIC_ENV_TYPE: Development
-
 defaults:
   run:
     working-directory: website
