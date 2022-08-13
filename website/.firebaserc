@@ -1,7 +1,7 @@
 {
   "projects": {
-    "default": "sp-next-firebase",
     "prod": "sp-next-firebase",
-    "dev": "sp-next-firebase-dev"
+    "dev": "sp-next-firebase-dev",
+    "default": "sp-next-firebase-dev"
   }
 }
