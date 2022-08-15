@@ -5,7 +5,7 @@ const SignInGoogle = () => {
   const [signInWithGoogle, userGoogle, loadingGoogle, errorGoogle] =
     useSignInWithGoogle(auth);
 
-  console.log("userGoogle------------", userGoogle);
+  // console.log("userGoogle------------", userGoogle);
   // console.log("userApple------------", userApple);
 
   // if (errorGoogle) {

@@ -15,7 +15,7 @@ const SignInEmail = () => {
   const [signInWithEmailAndPassword, user, loading, error] =
     useSignInWithEmailAndPassword(auth);
 
-  console.log("emailUser------------", user?.user);
+  // console.log("emailUser------------", user?.user);
   // console.log("userApple------------", userApple);
 
   // if (error) {

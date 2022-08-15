@@ -7,6 +7,7 @@ import HelloWorld from "@components/HelloWorld";
 import Matches from "@components/Matches";
 import User from "@components/User";
 import Header from "@components/Header";
+import FCM from "@components/FCM";
 
 const Home = () => {
   return (
@@ -21,6 +22,9 @@ const Home = () => {
         <Suspense fallback={<div>Loading...</div>}>
           <Header />
         </Suspense>
+
+        <FCM />
+
         <HelloWorld />
         <Suspense fallback={<article>Loading User...</article>}>
           <User />

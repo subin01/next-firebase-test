@@ -5,6 +5,7 @@ import { initializeApp, getApps } from "firebase/app";
 import { getAuth, onAuthStateChanged } from "firebase/auth";
 import { getFirestore, collection, doc } from "firebase/firestore";
 import { getFunctions, httpsCallable } from "firebase/functions";
+
 import {
   useCollectionData,
   useDocumentData,
@@ -48,7 +49,7 @@ export const store = proxy({
 const unsub = devtools(store, "test");
 
 onAuthStateChanged(auth, (firebaseUser) => {
-  console.log("----------- onAuthStateChanged");
+  // console.log("----------- onAuthStateChanged");
   resolve();
   store.currentUser = firebaseUser;
 });
