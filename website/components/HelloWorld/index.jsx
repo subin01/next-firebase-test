@@ -1,3 +1,7 @@
-export default function HelloWorld () {
-  return <h2>Hello world!</h2>;
+export default function HelloWorld() {
+  return (
+    <>
+      <h3>Hello world!</h3>
+    </>
+  );
 }
