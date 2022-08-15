@@ -1,19 +1,14 @@
 /* eslint-disable */
 // @ts-ignore
-import Head from 'next/head'
-import Image from 'next/image'
-import styles from '../styles/Home.module.css'
-import HelloWorld from '@components/HelloWorld'
-import { useCollectionData, useDocumentData } from 'react-firebase-hooks/firestore'
-import { firebaseApp } from '@firebase-api'
-import { getFirestore, collection, doc } from 'firebase/firestore'
+import { Suspense } from "react";
+import Head from "next/head";
+import styles from "../styles/Home.module.css";
+import HelloWorld from "@components/HelloWorld";
+import Matches from "@components/Matches";
+import User from "@components/User";
+import Header from "@components/Header";
 
 const Home = () => {
-
-  const [allMatches, loadingMatches, errorMatches] = useCollectionData(collection( getFirestore(firebaseApp), 'match'));
-  if (loadingMatches) return <h1>Loading Matches...</h1>
-  if (errorMatches) return <h1>Error Loading Matches!</h1>
-
   return (
     <div className={styles.container}>
       <Head>
@@ -23,29 +18,18 @@ const Home = () => {
       </Head>
 
       <main className={styles.main}>
-        <h1 className={styles.title}>
-         APP v2
-        </h1>
+        <Suspense fallback={<div>Loading...</div>}>
+          <Header />
+        </Suspense>
+        <HelloWorld />
+        <Suspense fallback={<article>Loading User...</article>}>
+          <User />
+        </Suspense>
 
-        <HelloWorld /> <h2>Subfolder!!!</h2>
-
-      <pre>Matches: {JSON.stringify(allMatches)}</pre>
+        <Matches />
       </main>
-
-      <footer className={styles.footer}>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{' '}
-          <span className={styles.logo}>
-            <Image src="/vercel.svg" alt="Vercel Logo" width={72} height={16} />
-          </span>
-        </a>
-      </footer>
     </div>
-  )
-}
+  );
+};
 
-export default Home
+export default Home;
