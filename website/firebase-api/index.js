@@ -45,6 +45,7 @@ export const store = proxy({
       ? "unauthenticated"
       : "authenticated";
   },
+  notifications: "",
 });
 const unsub = devtools(store, "test");
 
