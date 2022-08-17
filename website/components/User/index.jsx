@@ -28,7 +28,7 @@ export default function User() {
 
   return (
     <article>
-      <h1>Signed in as {currentUser.email}</h1>
+      <h1>Signed in as {currentUser?.email}</h1>
       <button onClick={() => signOut()}>Sign out</button>
     </article>
   );

@@ -46,8 +46,10 @@ export const store = proxy({
       : "authenticated";
   },
   notifications: "",
+  deviceToken: "",
 });
-const unsub = devtools(store, "test");
+
+const unsub = devtools(store, { name: "test" });
 
 onAuthStateChanged(auth, (firebaseUser) => {
   // console.log("----------- onAuthStateChanged");

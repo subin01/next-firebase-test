@@ -39,6 +39,34 @@ article {
   border: 1px solid lightgray;
   padding: 1rem;
   border-radius: 0.5rem;
-  width: clamp(20rem, 35rem, 70vw);
+  width: clamp(20rem, 35rem, 90vw);
   margin: 0 auto 1rem auto;
+  overflow: hidden;
+}
+
+select,
+button {
+  padding: 0.25rem;
+  min-width: 6rem;
+}
+
+textarea {
+  width: 100%;
+  min-height: 4em;
+}
+
+li {
+  margin: 0.5rem 0;
+}
+
+.table {
+  padding: 0;
+}
+
+.table li {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: space-between;
+  border-top: 1px solid lightgray;
+  padding: 0.5rem;
 }

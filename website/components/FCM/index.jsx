@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { getMessaging, getToken, onMessage } from "firebase/messaging";
 import { firebaseApp, store } from "@firebase-api";
 export default function FCM() {
-  const [deviceToken, setDeviceToken] = useState(null);
+  const [deviceToken, setDeviceToken] = useState("");
 
   const [hasMounted, setHasMounted] = useState(false);
   useEffect(() => {
@@ -21,9 +21,7 @@ export default function FCM() {
   });
 
   //Create ID @ https://console.firebase.google.com/project/sp-next-firebase-dev/settings/cloudmessaging/
-  const VAPID_KEY =
-    "BBd1Sv4ZEauxp6jgM-r-bhhjMZM9UGFrzQdD2Ouvn11Gd3ZPVNbWmjdhiIswVt-LnESvfMDSkBcVKj8gi9CeWks";
-
+  const VAPID_KEY = process.env.NEXT_PUBLIC_VAPID_KEY;
   //Initialize Firebase Cloud Messaging and get a reference to the service
   const messaging = getMessaging(firebaseApp);
   getToken(messaging, { vapidKey: VAPID_KEY })
@@ -33,6 +31,7 @@ export default function FCM() {
         // ...
         console.log("currentToken", currentToken);
         setDeviceToken(currentToken);
+        store.deviceToken = currentToken;
       } else {
         // Show permission request UI
         console.log(
@@ -57,7 +56,7 @@ export default function FCM() {
       FCM
       <div>
         deviceToken: <br></br>
-        <pre>{deviceToken}</pre>
+        <textarea value={deviceToken}></textarea>
       </div>
     </article>
   );
